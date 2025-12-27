@@ -1,21 +1,19 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddleware  # <--- Nhớ dòng import này
 
 app = FastAPI()
 
-# Cấu hình CORS: Cho phép React (chạy ở port 5173) gọi API
-origins = [
-    "http://localhost:5173",  # Port mặc định của Vite React
-    "http://localhost:3000",
-]
-
+# --- CẤU HÌNH CORS (CHO PHÉP TẤT CẢ) ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[
+        "*"
+    ],  # Dấu * nghĩa là chấp nhận mọi địa chỉ (localhost, 127.0.0.1, mobile...)
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Cho phép mọi phương thức: GET, POST, PUT, DELETE...
+    allow_headers=["*"],  # Cho phép mọi loại header
 )
+# ---------------------------------------
 
 
 @app.get("/")
