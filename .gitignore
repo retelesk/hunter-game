@@ -1,0 +1,66 @@
+# ========================
+# HỆ ĐIỀU HÀNH & IDE (Chung)
+# ========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ========================
+# FRONTEND (ReactJS)
+# ========================
+# Thư viện (Rất nặng, không bao giờ commit)
+node_modules/
+
+# Thư mục build (Production output)
+build/
+dist/
+
+# Logs lỗi của npm/yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Biến môi trường local (Chứa key bí mật)
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Nếu dùng Vite (Phổ biến với React mới)
+*.tsbuildinfo
+
+# ========================
+# BACKEND (FastAPI / Python)
+# ========================
+# Byte-compiled / Optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Môi trường ảo (Virtual Environment)
+venv/
+.venv/
+env/
+ENV/
+
+# Database SQLite (Nếu dùng local db thì nên ignore)
+*.sqlite3
+*.db
+*.sqlite
+
+# Testing & Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ========================
+# FILE NHẠY CẢM (Chung)
+# ========================
+# File .env chứa password/API key của cả 2 bên
+.env
+.env.*
+!.env.example
